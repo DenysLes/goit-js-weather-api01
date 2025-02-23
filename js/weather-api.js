@@ -8,9 +8,9 @@ search.addEventListener('submit', onSearch);
 function onSearch(evt) {
     evt.preventDefault()
     const { query, days } = evt.currentTarget.elements
-getWeather(query.value, days.value)
-    .then(data => console.log(createMarkup(data.forecast.forecastday)))
-    .catch(err => console.log(err));
+    getWeather(query.value, days.value)
+        .then((data) => list.innerHTML = createMarkup(data.forecast.forecastday))
+            .catch(err => console.log(err));
 }
 
 
